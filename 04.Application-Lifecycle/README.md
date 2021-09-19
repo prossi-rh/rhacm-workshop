@@ -4,8 +4,8 @@ In this exercise you will deploy a demo application onto the cluster using Red H
 
 In this exercise you will try to deploy an application that manages two versions -
 
-* Development - [https://github.com/michaelkotelnikov/rhacm-workshop/tree/dev/04.Application-Lifecycle/exercise-application/application-resources](https://github.com/michaelkotelnikov/rhacm-workshop/tree/dev/04.Application-Lifecycle/exercise-application/application-resources)
-* Production - [https://github.com/michaelkotelnikov/rhacm-workshop/tree/master/04.Application-Lifecycle/exercise-application/application-resources](https://github.com/michaelkotelnikov/rhacm-workshop/tree/master/04.Application-Lifecycle/exercise-application/application-resources)
+* Development - [https://github.com/prossi-rh/rhacm-workshop/tree/dev/04.Application-Lifecycle/exercise-application/application-resources](https://github.com/prossi-rh/rhacm-workshop/tree/dev/04.Application-Lifecycle/exercise-application/application-resources)
+* Production - [https://github.com/prossi-rh/rhacm-workshop/tree/master/04.Application-Lifecycle/exercise-application/application-resources](https://github.com/prossi-rh/rhacm-workshop/tree/master/04.Application-Lifecycle/exercise-application/application-resources)
 
 Both versions of the application are stored in the same Git repository, while the **production** version is stored in the **master** branch, and the **development** version is stored in the **dev** branch.
 
@@ -30,7 +30,7 @@ EOF
 ```
 
 
-* **Channel** - Create a channel that refers to the GitHub repository in which the application’s resources are placed. The GitHub repository is at - [https://github.com/michaelkotelnikov/rhacm-workshop.git](https://github.com/michaelkotelnikov/rhacm-workshop.git)
+* **Channel** - Create a channel that refers to the GitHub repository in which the application’s resources are placed. The GitHub repository is at - [https://github.com/prossi-rh/rhacm-workshop.git](https://github.com/prossi-rh/rhacm-workshop.git)
 
 ```
 <hub> $ cat >> channel.yaml << EOF
@@ -42,7 +42,7 @@ metadata:
   namespace: webserver-acm
 spec:
   type: Git
-  pathname: https://github.com/michaelkotelnikov/rhacm-workshop.git
+  pathname: https://github.com/prossi-rh/rhacm-workshop.git
 EOF
 
 <hub> $ oc apply -f channel.yaml
@@ -207,10 +207,10 @@ Note that the application is now deployed at its “production” version on **l
 
 Click on the application’s route resource, and navigate to **https://&lt;route-url>/application.html**. The application now serves a different webpage, indicating that the application is in a production state.
 
-**NOTE:** All of the resources you have configured in this exercise are present in the [git repository](https://github.com/michaelkotelnikov/rhacm-workshop.git). The resources can be created by running the next command -
+**NOTE:** All of the resources you have configured in this exercise are present in the [git repository](https://github.com/prossi-rh/rhacm-workshop.git). The resources can be created by running the next command -
 
 ```
-<hub> $ oc apply -f https://raw.githubusercontent.com/michaelkotelnikov/rhacm-workshop/master/04.Application-Lifecycle/exercise-application/rhacm-resources/application.yaml
+<hub> $ oc apply -f https://raw.githubusercontent.com/prossi-rh/rhacm-workshop/master/04.Application-Lifecycle/exercise-application/rhacm-resources/application.yaml
 ```
 
 # ArgoCD Integration
@@ -405,9 +405,9 @@ The applications are based on one [helm](https://helm.sh/) chart. Each applicati
 To create the ApplicationSet resource run the next commands -
 
 ```
-<hub> $ oc apply -f https://raw.githubusercontent.com/michaelkotelnikov/rhacm-workshop/master/04.Application-Lifecycle/exercise-argocd/argocd-resources/appproject.yaml
+<hub> $ oc apply -f https://raw.githubusercontent.com/prossi-rh/rhacm-workshop/master/04.Application-Lifecycle/exercise-argocd/argocd-resources/appproject.yaml
 
-<hub> $ oc apply -f https://raw.githubusercontent.com/michaelkotelnikov/rhacm-workshop/master/04.Application-Lifecycle/exercise-argocd/argocd-resources/applicationset.yaml
+<hub> $ oc apply -f https://raw.githubusercontent.com/prossi-rh/rhacm-workshop/master/04.Application-Lifecycle/exercise-argocd/argocd-resources/applicationset.yaml
 ```
 
 Note that two application instances have been created in the ArgoCD UI -

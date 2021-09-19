@@ -370,9 +370,9 @@ Before you start this section of the exercise, make sure you delete the namespac
 <hub> $ oc delete project rhacm-policies
 ```
 
-1. For this exercise, create a fork of the next GitHub repository - [https://github.com/michaelkotelnikov/rhacm-workshop](https://github.com/michaelkotelnikov/rhacm-workshop)
+1. For this exercise, create a fork of the next GitHub repository - [https://github.com/prossi-rh/rhacm-workshop](https://github.com/prossi-rh/rhacm-workshop)
 
-    As a result, you will have your own version of the repository - [https://github.com/&lt;your-username>/rhacm-workshop](https://github.com/michaelkotelnikov/rhacm-workshop)
+    As a result, you will have your own version of the repository - [https://github.com/&lt;your-username>/rhacm-workshop](https://github.com/prossi-rh/rhacm-workshop)
 
 2. Afterwards, create a namespace on which you will deploy the RHACM resources (Use the namespace.yaml file in the forked repository) -
 
@@ -399,7 +399,7 @@ Before you start this section of the exercise, make sure you delete the namespac
 ![policies-overview](images/policies-overview.png)
 
 
-6. Edit the LimitRange policy in [https://github.com/&lt;your-username>/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/exercise/exercise-policies/limitrange-policy.yaml](https://github.com/michaelkotelnikov/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/exercise/exercise-policies/limitrange-policy.yaml). Change the default container limit from 512Mi to 1024Mi.
+6. Edit the LimitRange policy in [https://github.com/&lt;your-username>/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/exercise/exercise-policies/limitrange-policy.yaml](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/exercise/exercise-policies/limitrange-policy.yaml). Change the default container limit from 512Mi to 1024Mi.
 7. Make sure that you commit, and push the change to your fork.
 8. Log into _local-cluster_. Make sure that the change in GitHub was applied to the LimitRange resource.
 
