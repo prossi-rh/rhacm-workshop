@@ -6,4 +6,4 @@ metadata:
   namespace: webserver-acm
 spec:
   type: Git
-  pathname: https://github.com/michaelkotelnikov/rhacm-workshop.git
+  pathname: https://github.com/prossi-rh/rhacm-workshop.git
