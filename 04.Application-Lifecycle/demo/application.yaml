@@ -1,0 +1,17 @@
+---
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: webserver-app
+  namespace: webserver-acm
+spec:
+  componentKinds:
+  - group: apps.open-cluster-management.io
+    kind: Subscription
+  descriptor: {}
+  selector:
+    matchExpressions:
+    - key: app
+      operator: In
+      values:
+      - webserver-app

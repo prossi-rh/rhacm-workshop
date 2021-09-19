@@ -1,0 +1,9 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: webserver-app
+  namespace: webserver-acm
+spec:
+  type: Git
+  pathname: https://github.com/michaelkotelnikov/rhacm-workshop.git
