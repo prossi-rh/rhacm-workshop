@@ -20,7 +20,7 @@ spec:
             exclude: []
           remediationAction: inform
           severity: low
-          minimumDuration: 17520h
+          minimumDuration: 2400h
 
 ---
 apiVersion: policy.open-cluster-management.io/v1

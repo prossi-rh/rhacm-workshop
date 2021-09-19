@@ -54,7 +54,7 @@ metadata:
   name: binding-policy-limitmemory
   namespace: rhacm-policies
 placementRef:
-  name: prod-policies-clusters
+  name: dev-clusters
   kind: PlacementRule
   apiGroup: apps.open-cluster-management.io
 subjects:
