@@ -20,3 +20,5 @@ The repository is separated into 7 sections. Each section represents a stage in 
 
 
 Each section contains a `README.md` file that contains exercises which summarize the topic. When the participants finish the relevant section in the [workshop](https://docs.google.com/presentation/d/1LCPvIT_nF5hwnrfYdlD0Zie4zdDxc0kxZtW3Io5jfFk/edit?usp=sharing), they may start working on the associated exercise.
+
+test1
