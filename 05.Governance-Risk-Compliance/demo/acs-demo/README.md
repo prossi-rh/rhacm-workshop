@@ -28,7 +28,7 @@ Follow these steps to get the `ROX_API_TOKEN` for the command line:
 
 Follow these steps to obtain the `roxctl` command:
 1. Download from this [link](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/roxctl) the CLI.
-2. Download from this [link](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/yq).
+2. Download from this [link](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/yq) the yq command.
 3. Save the `roxctl` command, copy on the bastion host in /usr/bin and change permission in executable (chmod 755 /usr/bin/roxctl).
 4. Save the `yq` command, copy on the bastion host in /usr/bin and change permission in executable (chmod 755 /usr/bin/yq).
 
