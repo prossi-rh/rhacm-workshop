@@ -5,11 +5,11 @@ Learn how quickly you can get Advanced Cluster Security deployed in your Open Cl
 
 Deploy this policy to your HUB to install the Advanced Cluster Security Central Server.
 
-- [Central Server Policy](https://github.com/open-cluster-management/policy-collection/blob/main/community/CM-Configuration-Management/policy-acs-operator-central.yaml)
+- [Central Server Policy](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/policy-acs-operator-central.yaml)
 
 ## Deploy the Secure Cluster Services
 
-Wait a few minutes for the Central Server to install.  Then you will need to setup your command line to have the following CLI and API token.
+Wait a few minutes for the Central Server to install. Then you will need to setup your command line to have the following CLI and API token.
 - `ROX_API_TOKEN` This is a token created in the Central Server to allow the `roxctl` command to make API calls to the Central Server.
 - `roxctl` This is the Advanced Cluster Security command line interface.  It's needed to create some certificate bundles that the Secure Cluster Services all need to use.
 
@@ -27,19 +27,21 @@ Follow these steps to get the `ROX_API_TOKEN` for the command line:
 ### Download roxctl
 
 Follow these steps to obtain the `roxctl` command:
-1. On the Red Hat Advanced Cluster Security for Kubernetes web console there is a download icon for downloading the CLI on the header.  Click the download CLI link and select your platform.
-2. Save the `roxctl` command and make sure you can execute it from your path.
+1. Download from this [link](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/roxctl) the CLI.
+2. Download from this [link](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/yq).
+3. Save the `roxctl` command, copy on the bastion host in /usr/bin and change permission in executable (chmod 755 /usr/bin/roxctl).
+4. Save the `yq` command, copy on the bastion host in /usr/bin and change permission in executable (chmod 755 /usr/bin/yq).
 
 ### Deploy the certificate bundle
 
 Follow these steps to deploy the certificates that the Advanced Cluster Security Secure Cluster Services will need to connect to the Central Server.
-1. Download the script from this repository [deploy-bundle.sh](scripts/deploy-bundle.sh)
+1. Download the script from this repository [deploy-bundle.sh](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/deploy-bundle.sh)
 2. Run the script with the command: `./deploy-bundle.sh -i bundle.yaml | oc apply -f -`
 
 ### Deploy the policy
 
 Follow these steps to deploy the Secure Cluster Services policy.  **Note** that this policy requires the steps above to have been completed.
-1. On the HUB cluster, deploy the policy [Policy to install the Red Hat Advanced Cluster Security Secure Cluster Services](https://github.com/open-cluster-management/policy-collection/blob/main/community/CM-Configuration-Management/policy-acs-operator-clusters.yaml)
+1. On the HUB cluster, deploy the policy [Policy to install the Red Hat Advanced Cluster Security Secure Cluster Services](https://github.com/prossi-rh/rhacm-workshop/blob/master/05.Governance-Risk-Compliance/demo/acs-demo/policy-acs-operator-clusters.yaml)
 2. Make sure the policy is set to `enforce` for the `remediationAction`
 
 
